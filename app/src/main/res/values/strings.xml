@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Light Me Up - Lab02</string>
+    <string name="land_text_on">BULB is ON</string>
+    <string name="land_text_off">BULB is OFF</string>
+</resources>
