@@ -3,8 +3,6 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
-/.idea/modules.xml
-/app/build
 .DS_Store
 /build
 /captures
