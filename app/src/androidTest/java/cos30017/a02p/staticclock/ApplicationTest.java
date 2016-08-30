@@ -1,4 +1,4 @@
-package cos30017.a20p.staticclock;
+package cos30017.a02p.staticclock;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

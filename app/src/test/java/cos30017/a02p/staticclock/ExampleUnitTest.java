@@ -1,4 +1,4 @@
-package cos30017.a20p.staticclock;
+package cos30017.a02p.staticclock;
 
 import org.junit.Test;
 
