@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Convert Distance - Task 5</string>
+    <string name="label_miles">Miles</string>
+    <string name="label_feet">Feet</string>
+    <string name="label_inches">Inches</string>
+    <string name="button_submit">Convert</string>
+    <string name="checkbox_meters">Show conversion as meters</string>
+</resources>
