@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="cos30017.a02p.convertdistance.MainActivity">
+    tools:context="cos30017.a02p.convertDistance.MainActivity">
 
 
     <TableLayout
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/milesInput" />
+            android:id="@+id/inputMiles" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/inputFeet" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
-            android:id="@+id/editText3" />
+            android:id="@+id/inputInches" />
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -68,16 +68,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_submit"
-            android:id="@+id/button" />
+            android:id="@+id/buttonConvert" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
+            android:text="No Conversion"
             android:id="@+id/textResult"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal" />
     </TableLayout>
 
-</RelativeLayout>
+</LinearLayout>
