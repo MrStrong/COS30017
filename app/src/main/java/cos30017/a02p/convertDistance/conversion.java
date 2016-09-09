@@ -1,4 +1,4 @@
-package cos30017.a02p.convertDistance;
+package cos30017.a02p.convertdistance;
 
 /**
  * Created by Daniel on 3/09/2016.

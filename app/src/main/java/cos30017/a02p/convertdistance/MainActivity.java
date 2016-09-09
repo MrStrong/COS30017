@@ -1,4 +1,4 @@
-package cos30017.a02p.convertDistance;
+package cos30017.a02p.convertdistance;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             EditText inputFeet = (EditText) findViewById(R.id.inputFeet);
             EditText inputinches = (EditText) findViewById(R.id.inputInches);
 
-            Conversion conversion = new Conversion((Double) inputMiles.getText().toString());
+            //Conversion conversion = new Conversion((Double) inputMiles.getText().toString());
             if ( !((CheckBox) findViewById(R.id.checkBox)).isChecked() ) {
 
             }

@@ -1,4 +1,4 @@
-package cos30017.a02p.convertDistance;
+package cos30017.a02p.convertdistance;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
