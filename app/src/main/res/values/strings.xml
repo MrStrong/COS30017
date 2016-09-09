@@ -5,4 +5,5 @@
     <string name="label_inches">Inches</string>
     <string name="button_submit">Convert</string>
     <string name="checkbox_meters">Show conversion as meters</string>
+    <string name="converted_cm_precision">%.2f CM</string>
 </resources>
