@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/checkbox_meters"
-                android:id="@+id/checkBox" />
+                android:id="@+id/checkBoxMeters" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"

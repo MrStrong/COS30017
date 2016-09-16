@@ -14,6 +14,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView convertedText;
+    private EditText inputMiles;
+    private EditText inputFeet;
+    private EditText inputInches;
+    private CheckBox checkBoxMeters;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeUI(Bundle savedInstanceState) {
+        convertedText = (TextView) findViewById(R.id.textResult);
+        inputMiles = (EditText) findViewById(R.id.inputMiles);
+        inputFeet = (EditText) findViewById(R.id.inputFeet);
+        inputInches = (EditText) findViewById(R.id.inputInches);
+        checkBoxMeters = (CheckBox) findViewById(R.id.checkBoxMeters);
+
+        restoreState(savedInstanceState);
+
         Button btnConvert = (Button)findViewById(R.id.buttonConvert);
         btnConvert.setOnClickListener(clickBtnConvertListener);
 
@@ -31,18 +45,36 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
+    //save vales needed for the view
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        state.putString("convertedText", convertedText.getText().toString());
+        state.putString("inputMiles", inputMiles.getText().toString());
+        state.putString("inputFeet", inputFeet.getText().toString());
+        state.putString("inputInches", inputInches.getText().toString());
+        state.putBoolean("checkBoxMeters", checkBoxMeters.isChecked());
+
+    }
+
+    //restore previous values if available
+    private void restoreState(Bundle state) {
+        if (state != null) {
+            convertedText.setText(state.getString("convertedText"));
+            inputMiles.setText(state.getString("inputMiles"));
+            inputFeet.setText(state.getString("inputFeet"));
+            inputInches.setText(state.getString("inputInches"));
+            checkBoxMeters.setChecked(state.getBoolean("checkBoxMeters"));
+
+        }
+    }
+
     private View.OnClickListener clickBtnConvertListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            TextView convertedText = (TextView) findViewById(R.id.textResult);
-            EditText inputMiles = (EditText) findViewById(R.id.inputMiles);
-            EditText inputFeet = (EditText) findViewById(R.id.inputFeet);
-            EditText inputInches = (EditText) findViewById(R.id.inputInches);
-
             try {
                 Conversion conversion = new Conversion(inputMiles.getText().toString(), inputFeet.getText().toString(), inputInches.getText().toString());
 
-                if ( !((CheckBox) findViewById(R.id.checkBox)).isChecked() ) {
+                if ( !checkBoxMeters.isChecked() ) {
                     convertedText.setText(String.format("%.2f CM", conversion.toCentimeters()));
                 } else {
                     convertedText.setText(String.format("%.2f M", conversion.toMeters()));
