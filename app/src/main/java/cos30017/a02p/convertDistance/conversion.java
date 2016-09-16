@@ -1,9 +1,5 @@
 package cos30017.a02p.convertdistance;
 
-import android.util.Log;
-import android.widget.EditText;
-
-import java.io.IOException;
 
 /**
  * Created by Daniel on 3/09/2016.

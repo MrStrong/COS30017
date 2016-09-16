@@ -39,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnConvert = (Button)findViewById(R.id.buttonConvert);
         btnConvert.setOnClickListener(clickBtnConvertListener);
-
-        getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN
-        );
     }
 
     //save vales needed for the view
@@ -64,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             inputFeet.setText(state.getString("inputFeet"));
             inputInches.setText(state.getString("inputInches"));
             checkBoxMeters.setChecked(state.getBoolean("checkBoxMeters"));
-
         }
     }
 
@@ -100,9 +95,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 //no keyboard to hide. do nothing
             }
-
-
-
         }
     };
 }
