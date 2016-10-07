@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">Convert Distance - Task 5</string>
+    <string name="app_name">Converter - Task 5</string>
+    <string name="activity_name_distance">Convert Distance</string>
+    <string name="activity_name_temperature">Convert Celsius to Fahrenheit</string>
     <string name="label_miles">Miles</string>
     <string name="label_feet">Feet</string>
     <string name="label_inches">Inches</string>
-    <string name="button_submit">Convert</string>
+    <string name="label_celsius">Celsius</string>
+    <string name="button_convert">Convert</string>
+    <string name="button_temperature">Convert Temperature</string>
+    <string name="button_distance">Convert Distance</string>
     <string name="checkbox_meters">Show conversion as meters</string>
     <string name="converted_cm_precision">%.2f CM</string>
 </resources>
