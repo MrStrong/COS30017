@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.1"
 
     defaultConfig {
-        applicationId "cos30017.a02p.convertdistance"
+        applicationId "cos30017.a03p.converter"
         minSdkVersion 23
         targetSdkVersion 24
         versionCode 1

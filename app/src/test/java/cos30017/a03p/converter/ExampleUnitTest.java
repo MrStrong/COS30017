@@ -1,4 +1,4 @@
-package cos30017.a02p.convertdistance;
+package cos30017.a03p.converter;
 
 import org.junit.Test;
 

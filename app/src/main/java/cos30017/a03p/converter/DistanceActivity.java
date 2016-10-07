@@ -1,18 +1,17 @@
-package cos30017.a02p.convertdistance;
+package cos30017.a03p.converter;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class DistanceActivity extends AppCompatActivity {
 
     private TextView convertedText;
     private EditText inputMiles;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_distance);
         initializeUI(savedInstanceState);
     }
 
@@ -67,16 +66,16 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             try {
-                Conversion conversion = new Conversion(inputMiles.getText().toString(), inputFeet.getText().toString(), inputInches.getText().toString());
+                DistanceConversion distanceConversion = new DistanceConversion(inputMiles.getText().toString(), inputFeet.getText().toString(), inputInches.getText().toString());
 
                 if ( !checkBoxMeters.isChecked() ) {
-                    convertedText.setText(String.format("%.2f CM", conversion.toCentimeters()));
+                    convertedText.setText(String.format("%.2f CM", distanceConversion.toCentimeters()));
                 } else {
-                    convertedText.setText(String.format("%.2f M", conversion.toMeters()));
+                    convertedText.setText(String.format("%.2f M", distanceConversion.toMeters()));
                 }
 
             } catch (Exception e) {
-                AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                AlertDialog alertDialog = new AlertDialog.Builder(DistanceActivity.this).create();
                 alertDialog.setTitle("Input Error");
                 alertDialog.setMessage("Input cannot be empty");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
