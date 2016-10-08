@@ -10,7 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cos30017.a03p.imagebrowser.DisplayActivity">
+    tools:context="cos30017.a04p.imagemetadata.DisplayActivity">
 
     <TextView
         android:id="@+id/TextViewImageName"
