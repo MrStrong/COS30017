@@ -12,7 +12,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="@dimen/activity_horizontal_margin">
 
         <TableRow
             android:layout_width="match_parent"
@@ -21,10 +21,10 @@
             android:onClick="bananaBtnClickHandler">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/image_thumb_square"
+                android:layout_height="@dimen/image_thumb_square"
                 app:srcCompat="@drawable/banana"
-                android:id="@+id/imageView"
+                android:id="@+id/imageViewBanana"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false" />
 
@@ -33,7 +33,7 @@
                 style="@style/TableRowTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView" />
+                android:id="@+id/textViewBanana" />
         </TableRow>
 
         <TableRow
@@ -43,17 +43,17 @@
             android:onClick="grapeBtnClickHandler">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/image_thumb_square"
+                android:layout_height="@dimen/image_thumb_square"
                 app:srcCompat="@drawable/grape"
-                android:id="@+id/imageView2" />
+                android:id="@+id/imageViewGrape" />
 
             <TextView
                 android:text="@string/image_name_grape"
                 style="@style/TableRowTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2" />
+                android:id="@+id/textViewGrape" />
         </TableRow>
 
         <TableRow
@@ -63,17 +63,17 @@
             android:onClick="grapefruitBtnClickHandler">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/image_thumb_square"
+                android:layout_height="@dimen/image_thumb_square"
                 app:srcCompat="@drawable/grapefruit"
-                android:id="@+id/imageView3" />
+                android:id="@+id/imageViewGrapefruit" />
 
             <TextView
                 android:text="@string/image_name_grapefruit"
                 style="@style/TableRowTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3" />
+                android:id="@+id/textViewGrapefruit" />
         </TableRow>
 
         <TableRow
@@ -83,17 +83,17 @@
             android:onClick="pineappleBtnClickHandler">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="@dimen/image_thumb_square"
+                android:layout_height="@dimen/image_thumb_square"
                 app:srcCompat="@drawable/pineapple"
-                android:id="@+id/imageView4" />
+                android:id="@+id/imageViewPineapple" />
 
             <TextView
                 android:text="@string/image_name_pineapple"
                 style="@style/TableRowTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4" />
+                android:id="@+id/textViewPineapple" />
         </TableRow>
     </TableLayout>
 </LinearLayout>
