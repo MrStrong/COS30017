@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Converter - Task 5</string>
+    <string name="app_name">Converter - Task 1</string>
     <string name="activity_name_distance">Convert Distance</string>
     <string name="activity_name_temperature">Convert Celsius to Fahrenheit</string>
     <string name="label_miles">Miles</string>
