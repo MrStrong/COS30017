@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TableRowTextView">
+        <item name="android:padding">15dp</item>
+    </style>
+    <style name="TableRow">
+        <item name="android:gravity">center_vertical</item>
+        <!--<item name="android:background">@color/colorTableBackground</item>-->
+    </style>
+
 </resources>
