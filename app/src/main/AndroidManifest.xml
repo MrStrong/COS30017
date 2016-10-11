@@ -15,7 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="cos30017.a04p.imagemetadata.DisplayActivity"></activity>
+        <activity android:name="cos30017.a04p.imagemetadata.MetadataEditActivity"></activity>
     </application>
 
 </manifest>

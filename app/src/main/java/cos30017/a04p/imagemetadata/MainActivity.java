@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         // set the sender and the receiver of the intent
         Intent intent = new Intent();
-        intent.setClass(getApplicationContext(), cos30017.a04p.imagemetadata.DisplayActivity.class);
+        intent.setClass(getApplicationContext(), MetadataEditActivity.class);
         intent.putExtras(dataBundle); // store the data you want sent
 
-        startActivity(intent); // transmit your intent
+        startActivityForResult(intent, 0);
     }
 }
