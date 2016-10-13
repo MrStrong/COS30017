@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class DistanceActivity extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class DistanceActivity extends AppCompatActivity {
     private EditText inputMiles;
     private EditText inputFeet;
     private EditText inputInches;
-    private CheckBox checkBoxMeters;
+    private Spinner spinnerConversionUnits;
 
 
     @Override
@@ -32,7 +33,7 @@ public class DistanceActivity extends AppCompatActivity {
         inputMiles = (EditText) findViewById(R.id.inputMiles);
         inputFeet = (EditText) findViewById(R.id.inputFeet);
         inputInches = (EditText) findViewById(R.id.inputInches);
-        checkBoxMeters = (CheckBox) findViewById(R.id.checkBoxMeters);
+        spinnerConversionUnits = (Spinner) findViewById(R.id.spinnerConversionUnits);
 
         restoreState(savedInstanceState);
 
@@ -47,7 +48,7 @@ public class DistanceActivity extends AppCompatActivity {
         state.putString("inputMiles", inputMiles.getText().toString());
         state.putString("inputFeet", inputFeet.getText().toString());
         state.putString("inputInches", inputInches.getText().toString());
-        state.putBoolean("checkBoxMeters", checkBoxMeters.isChecked());
+        state.putInt("spinnerConversionUnits", spinnerConversionUnits.getSelectedItemPosition());
 
     }
 
@@ -58,7 +59,7 @@ public class DistanceActivity extends AppCompatActivity {
             inputMiles.setText(state.getString("inputMiles"));
             inputFeet.setText(state.getString("inputFeet"));
             inputInches.setText(state.getString("inputInches"));
-            checkBoxMeters.setChecked(state.getBoolean("checkBoxMeters"));
+            spinnerConversionUnits.setSelection(state.getInt("spinnerConversionUnits"));
         }
     }
 
@@ -68,10 +69,19 @@ public class DistanceActivity extends AppCompatActivity {
             try {
                 DistanceConversion distanceConversion = new DistanceConversion(inputMiles.getText().toString(), inputFeet.getText().toString(), inputInches.getText().toString());
 
-                if ( !checkBoxMeters.isChecked() ) {
-                    convertedText.setText(String.format("%.2f CM", distanceConversion.toCentimeters()));
-                } else {
-                    convertedText.setText(String.format("%.2f M", distanceConversion.toMeters()));
+                switch (spinnerConversionUnits.getSelectedItemPosition()) {
+                    //centimeters
+                    case 0:
+                        convertedText.setText(String.format("%.2f CM", distanceConversion.toCentimeters()));
+                        break;
+                    //Meters
+                    case 1:
+                        convertedText.setText(String.format("%.2f M", distanceConversion.toMeters()));
+                        break;
+                    //Kilometers
+                    case 2:
+                        convertedText.setText(String.format("%.2f KM", distanceConversion.toKilometers()));
+                        break;
                 }
 
             } catch (Exception e) {

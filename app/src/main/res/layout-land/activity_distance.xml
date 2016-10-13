@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/label_inches"
-                android:id="@+id/textView3" />
+                android:id="@+id/textLabelInches" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -66,11 +66,18 @@
                 android:ems="10"
                 android:id="@+id/inputInches" />
 
-            <CheckBox
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/checkbox_meters"
-                android:id="@+id/checkBoxMeters" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/label_conversion_unit_selection"
+                android:id="@+id/textLabelConversionUnit" />
+
+            <Spinner
+                android:id="@+id/spinnerConversionUnits"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinner_entries" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"

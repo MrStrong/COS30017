@@ -9,6 +9,12 @@
     <string name="button_convert">Convert</string>
     <string name="button_temperature">Convert Temperature</string>
     <string name="button_distance">Convert Distance</string>
-    <string name="checkbox_meters">Show conversion as meters</string>
+    <string name="label_conversion_unit_selection">Show conversion as: </string>
     <string name="converted_cm_precision">%.2f CM</string>
+
+    <string-array name="spinner_entries">
+        <item>Centimeters</item>
+        <item>Meters</item>
+        <item>Kilometers</item>
+    </string-array>
 </resources>
