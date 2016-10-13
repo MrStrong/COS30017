@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,12 +27,26 @@
                 android:adjustViewBounds="false"
                 android:cropToPadding="false" />
 
-            <TextView
-                android:text="@string/image_name_banana"
-                style="@style/TableRowTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewBanana" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/image_name_banana"
+                    style="@style/TableRowTextViewName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewBanana" />
+
+                <TextView
+                    android:text="DATE"
+                    style="@style/TableRowTextViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewBananaDate" />
+            </LinearLayout>
+
         </TableRow>
 
         <TableRow
@@ -48,12 +61,25 @@
                 app:srcCompat="@drawable/grape"
                 android:id="@+id/imageViewGrape" />
 
-            <TextView
-                android:text="@string/image_name_grape"
-                style="@style/TableRowTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewGrape" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/image_name_grape"
+                    style="@style/TableRowTextViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewGrape" />
+
+                <TextView
+                    android:text="DATE"
+                    style="@style/TableRowTextViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewGrapeDate" />
+            </LinearLayout>
         </TableRow>
 
         <TableRow
@@ -68,12 +94,25 @@
                 app:srcCompat="@drawable/grapefruit"
                 android:id="@+id/imageViewGrapefruit" />
 
-            <TextView
-                android:text="@string/image_name_grapefruit"
-                style="@style/TableRowTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewGrapefruit" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/image_name_grapefruit"
+                    style="@style/TableRowTextViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewGrapefruit" />
+
+                <TextView
+                    android:text="DATE"
+                    style="@style/TableRowTextViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewGrapefruitDate" />
+            </LinearLayout>
         </TableRow>
 
         <TableRow
@@ -88,12 +127,25 @@
                 app:srcCompat="@drawable/pineapple"
                 android:id="@+id/imageViewPineapple" />
 
-            <TextView
-                android:text="@string/image_name_pineapple"
-                style="@style/TableRowTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewPineapple" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/image_name_pineapple"
+                    style="@style/TableRowTextViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPineapple" />
+
+                <TextView
+                    android:text="DATE"
+                    style="@style/TableRowTextViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPineappleDate" />
+            </LinearLayout>
         </TableRow>
     </TableLayout>
 </LinearLayout>

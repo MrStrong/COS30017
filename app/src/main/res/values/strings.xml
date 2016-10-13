@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Image Browser - Task 2</string>
+    <string name="app_name">Image Metadata - Task 1</string>
     <string name="image_name_banana">Bananas</string>
     <string name="image_name_grape">Grapes</string>
     <string name="image_name_grapefruit">Grapefruit</string>
