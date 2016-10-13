@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
+                android:text="0"
                 android:id="@+id/inputMiles" />
 
             <TextView
@@ -50,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
+                android:text="0"
                 android:id="@+id/inputFeet" />
 
             <TextView
@@ -64,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
                 android:ems="10"
+                android:text="0"
                 android:id="@+id/inputInches" />
 
             <TextView
