@@ -1,4 +1,4 @@
-package cos30017.lab01.helloworld;
+package cos30017.a02p.helloworld;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

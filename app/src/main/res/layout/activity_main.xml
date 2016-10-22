@@ -7,15 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cos30017.lab01.helloworld.MainActivity">
+    tools:context="cos30017.a02p.helloworld.MainActivity">
 
-    <ImageView
-        android:contentDescription="@string/mainImageDescription"
+
+    <TextView
+        android:text="@string/hello_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/android_logo_800"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView" />
 </RelativeLayout>
