@@ -4,4 +4,13 @@
     <string name="image_name_grape">Grapes</string>
     <string name="image_name_grapefruit">Grapefruit</string>
     <string name="image_name_pineapple">Pineapple</string>
+
+    <string name="label_form_name">Name</string>
+    <string name="label_from_date">Date Obtained</string>
+    <string name="label_from_rating">Rating</string>
+    <string name="label_from_location">Location</string>
+    <string name="label_from_keywords">Keywords</string>
+    <string name="label_form_share">Share</string>
+    <string name="label_form_author">Obtainer</string>
+
 </resources>

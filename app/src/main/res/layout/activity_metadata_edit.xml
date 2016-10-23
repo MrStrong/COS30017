@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context="cos30017.a04p.imagemetadata.MetadataEditActivity">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -39,7 +38,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:text="@string/image_name_banana"
+                        android:text="@string/label_form_name"
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -51,11 +50,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
-                        android:hint="Name cannot be blank"
                         android:id="@+id/inputName" />
 
                     <TextView
-                        android:text="@string/image_name_banana"
+                        android:text="@string/label_from_date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/textLabelObtainedDate"
@@ -87,10 +85,10 @@
                 </TableRow>
 
                 <TextView
-                    android:text="LABEL"
+                    android:text="@string/label_from_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textLabelTHING1"
+                    android:id="@+id/textLabelRating"
                     android:layout_column="1"/>
 
                 <EditText
@@ -98,13 +96,13 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:layout_gravity="fill_horizontal"
-                    android:id="@+id/inputTHING2" />
+                    android:id="@+id/inputLocations" />
 
                 <TextView
-                    android:text="LABEL"
+                    android:text="@string/label_from_keywords"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textLabelTHING3"
+                    android:id="@+id/textLabelKeywords"
                     android:layout_column="1"/>
 
                 <EditText
@@ -112,13 +110,13 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:layout_gravity="fill_horizontal"
-                    android:id="@+id/inputTHING4" />
+                    android:id="@+id/inputKeywords" />
 
                 <TextView
-                    android:text="LABEL"
+                    android:text="@string/label_form_author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textLabelTHING5"
+                    android:id="@+id/textLabelObtainer"
                     android:layout_column="1"/>
 
                 <EditText
@@ -126,13 +124,21 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:layout_gravity="fill_horizontal"
-                    android:id="@+id/inputTHING6" />
+                    android:id="@+id/inputObtainer" />
 
-                <CheckBox
-                    android:text="CheckBox"
+                <TextView
+                    android:text="@string/label_form_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/checkBox" />
+                    android:id="@+id/textLabelShare"
+                    android:layout_column="1"/>
+
+                <ToggleButton
+                    android:textOff="@string/label_form_share"
+                    android:textOn="@string/label_form_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/toggleButtonShare" />
 
             </TableLayout>
         </LinearLayout>

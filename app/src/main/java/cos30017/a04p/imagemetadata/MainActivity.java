@@ -3,7 +3,10 @@ package cos30017.a04p.imagemetadata;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,22 +17,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void bananaBtnClickHandler(View v) {
-        showDisplayView(getString(R.string.image_name_banana), R.drawable.banana_700);
+        showMetadataEditView(getString(R.string.image_name_banana), R.drawable.banana_700);
     }
 
     public void grapeBtnClickHandler(View v) {
-        showDisplayView(getString(R.string.image_name_grape), R.drawable.grape_700);
+        showMetadataEditView(getString(R.string.image_name_grape), R.drawable.grape_700);
     }
 
     public void grapefruitBtnClickHandler(View v) {
-        showDisplayView(getString(R.string.image_name_grapefruit), R.drawable.grapefruit_700);
+        showMetadataEditView(getString(R.string.image_name_grapefruit), R.drawable.grapefruit_700);
     }
 
     public void pineappleBtnClickHandler(View v) {
-        showDisplayView(getString(R.string.image_name_pineapple), R.drawable.pineapple_700);
+        showMetadataEditView(getString(R.string.image_name_pineapple), R.drawable.pineapple_700);
     }
 
-    private void showDisplayView(String imageName, int drawableImage)
+    private void showMetadataEditView(String imageName, int drawableImage)
     {
         Bundle dataBundle = new Bundle();
         dataBundle.putString("name", imageName);
@@ -41,5 +44,16 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(dataBundle); // store the data you want sent
 
         startActivityForResult(intent, 0);
+    }
+
+    public void onMetadataEditResult(int requestCode, int resultCode, Intent intent) {
+        if (intent == null) {
+            Log.i("ACTIVITY-RESULT-Intent", "Is NULL");
+        }
+        else {
+            Log.i("ACTIVITY-RESULT-Intent", "Has Data");
+            //read data back into person object
+            ArrayList<ImageMetadata> imageMetadataDataList - intent.getParcelableArrayListExtra("")
+        }
     }
 }

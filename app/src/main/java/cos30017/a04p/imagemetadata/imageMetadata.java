@@ -9,7 +9,7 @@ import java.util.Date;
  * Created by Daniel on 8/10/2016.
  */
 
-public class imageMetadata implements Parcelable {
+public class ImageMetadata implements Parcelable {
     private int drawableImage; //required
     private String name; //required
     private String sourceUrl;
@@ -26,7 +26,7 @@ public class imageMetadata implements Parcelable {
      * @param whoObtained Who obtained this image? (has to be email address, cannot be empty)
      * @throws IllegalArgumentException throws exception for invalid data input
      */
-    public imageMetadata(int drawableImage, String name, String whoObtained) throws IllegalArgumentException {
+    public ImageMetadata(int drawableImage, String name, String whoObtained) throws IllegalArgumentException {
         setDrawableImage(drawableImage);
         setName(name);
         setWhoObtained(whoObtained);
@@ -44,7 +44,7 @@ public class imageMetadata implements Parcelable {
      * @param rating
      * @throws IllegalArgumentException throws exception for invalid data input
      */
-    public imageMetadata(int drawableImage, String name, String sourceUrl, String keywords, Date obtainedDate, Boolean share, String whoObtained, int rating) throws IllegalArgumentException {
+    public ImageMetadata(int drawableImage, String name, String sourceUrl, String keywords, Date obtainedDate, Boolean share, String whoObtained, int rating) throws IllegalArgumentException {
         setDrawableImage(drawableImage);
         setName(name);
         setSourceUrl(sourceUrl);
@@ -140,20 +140,20 @@ public class imageMetadata implements Parcelable {
         out.writeInt(rating);
     }
 
-    public static final Parcelable.Creator<imageMetadata> CREATOR = new Parcelable.Creator<imageMetadata>() {
+    public static final Parcelable.Creator<ImageMetadata> CREATOR = new Parcelable.Creator<ImageMetadata>() {
         @Override
-        public imageMetadata createFromParcel(Parcel in) {
-            return new imageMetadata(in);
+        public ImageMetadata createFromParcel(Parcel in) {
+            return new ImageMetadata(in);
         }
 
         @Override
-        public imageMetadata[] newArray(int size) {
-            return new imageMetadata[size];
+        public ImageMetadata[] newArray(int size) {
+            return new ImageMetadata[size];
         }
     };
 
     /** Private constructor called internally by Parcelable Creator */
-    private imageMetadata(Parcel in) {
+    private ImageMetadata(Parcel in) {
         drawableImage = in.readInt();
         name = in.readString();
         sourceUrl = in.readString();
