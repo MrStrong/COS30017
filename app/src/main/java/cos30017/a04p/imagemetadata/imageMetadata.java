@@ -26,6 +26,7 @@ public class ImageMetadata implements Parcelable {
      * @param whoObtained Who obtained this image? (has to be email address, cannot be empty)
      * @throws IllegalArgumentException throws exception for invalid data input
      */
+
     public ImageMetadata(int drawableImage, String name, String whoObtained) throws IllegalArgumentException {
         setDrawableImage(drawableImage);
         setName(name);
@@ -153,6 +154,7 @@ public class ImageMetadata implements Parcelable {
     };
 
     /** Private constructor called internally by Parcelable Creator */
+
     private ImageMetadata(Parcel in) {
         drawableImage = in.readInt();
         name = in.readString();

@@ -1,20 +1,16 @@
 package cos30017.a04p.imagemetadata;
 
-import android.content.Intent;
+import android.app.DatePickerDialog;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-
-import java.util.ArrayList;
+import android.widget.TextView;
 
 public class MetadataEditActivity extends AppCompatActivity {
-
-    ImageMetadata imageMetadata;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +36,5 @@ public class MetadataEditActivity extends AppCompatActivity {
 
     public void dateEditTextOnClickHandler(View v) {
         //new DatePickerDialog(this);
-    }
-
-    public void onBackPressed() {
-        Log.i("METADATA EDIT", "Back Button Pressed");
-
-        Intent resultIntent = new Intent();
-        ArrayList<ImageMetadata> imageMetadataDataList = new ArrayList<>();
-        imageMetadataDataList.add(imageMetadata);
-        resultIntent.putParcelableArrayListExtra("IMAGE_METADATA_DATA", imageMetadataDataList);
-        setResult(RESULT_OK, resultIntent);
     }
 }

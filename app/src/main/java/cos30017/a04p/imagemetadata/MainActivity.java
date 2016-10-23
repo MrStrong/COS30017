@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Log.i("ACTIVITY-RESULT-Intent", "Has Data");
             //read data back into person object
-            ArrayList<ImageMetadata> imageMetadataDataList - intent.getParcelableArrayListExtra("")
+            ArrayList<ImageMetadata> imageMetadataDataList = intent.getParcelableArrayListExtra("");
         }
     }
 }
