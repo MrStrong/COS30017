@@ -5,6 +5,9 @@
     <string name="image_name_grapefruit">Grapefruit</string>
     <string name="image_name_pineapple">Pineapple</string>
 
+    <string name="image_obtainer_bob">bob@mail.com.au</string>
+    <string name="image_obtainer_jill">jill@mail.co.uk</string>
+
     <string name="label_form_name">Name</string>
     <string name="label_from_date">Date Obtained</string>
     <string name="label_from_rating">Rating</string>
@@ -12,5 +15,9 @@
     <string name="label_from_keywords">Keywords</string>
     <string name="label_form_share">Share</string>
     <string name="label_form_author">Obtainer</string>
+
+    <string name="dialog_alert_imput_error_title">Input Error</string>
+    <string name="dialog_alert_name_blank">Image name cannot be blank</string>
+    <string name="dialog_alert_name_email">Obtainer not valid email address</string>
 
 </resources>

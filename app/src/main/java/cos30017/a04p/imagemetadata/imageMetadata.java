@@ -27,10 +27,17 @@ public class ImageMetadata implements Parcelable {
      * @throws IllegalArgumentException throws exception for invalid data input
      */
 
-    public ImageMetadata(int drawableImage, String name, String whoObtained) throws IllegalArgumentException {
+    public ImageMetadata(int drawableImage, String name, String whoObtained, Date obtainedDate) throws IllegalArgumentException {
         setDrawableImage(drawableImage);
         setName(name);
         setWhoObtained(whoObtained);
+        setObtainedDate(obtainedDate);
+
+        //set others to default values, not null. Parcelable doesn't like null
+        setSourceUrl("");
+        setKeywords("");
+        setShare(false);
+        setRating(0);
     }
 
     /**
@@ -45,7 +52,7 @@ public class ImageMetadata implements Parcelable {
      * @param rating
      * @throws IllegalArgumentException throws exception for invalid data input
      */
-    public ImageMetadata(int drawableImage, String name, String sourceUrl, String keywords, Date obtainedDate, Boolean share, String whoObtained, int rating) throws IllegalArgumentException {
+    public ImageMetadata(int drawableImage, String name, String whoObtained,Date obtainedDate, String sourceUrl, String keywords, Boolean share, int rating) throws IllegalArgumentException {
         setDrawableImage(drawableImage);
         setName(name);
         setSourceUrl(sourceUrl);
@@ -54,6 +61,21 @@ public class ImageMetadata implements Parcelable {
         setShare(share);
         setWhoObtained(whoObtained);
         setRating(rating);
+    }
+
+    /**
+     * update this with another ImageMetadata object
+     * @param imageMetadata
+     */
+    public void update (ImageMetadata imageMetadata) {
+        setDrawableImage(imageMetadata.getDrawableImage());
+        setName(imageMetadata.getName());
+        setSourceUrl(imageMetadata.getSourceUrl());
+        setKeywords(imageMetadata.getKeywords());
+        setObtainedDate(imageMetadata.getObtainedDate());
+        setShare(imageMetadata.getShare());
+        setWhoObtained(imageMetadata.getWhoObtained());
+        setRating(imageMetadata.getRating());
     }
 
     public int getDrawableImage() {

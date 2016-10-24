@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:numStars="5"
                         android:stepSize="1"
-                        android:id="@+id/ratingBar"
+                        android:id="@+id/ratingBarImage"
                         android:rating="3"
                         android:isIndicator="false" />
                 </TableRow>
@@ -115,6 +115,7 @@
                     android:text="@string/label_form_author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
                     android:id="@+id/textLabelObtainer"
                     android:layout_column="1"/>
 

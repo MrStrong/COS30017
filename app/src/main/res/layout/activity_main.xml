@@ -17,13 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/TableRow"
-            android:onClick="bananaBtnClickHandler">
+            android:onClick="BtnClickHandler1">
 
             <ImageView
                 android:layout_width="@dimen/image_thumb_square"
                 android:layout_height="@dimen/image_thumb_square"
-                app:srcCompat="@drawable/banana"
-                android:id="@+id/imageViewBanana"
+                android:id="@+id/imageView1"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false" />
 
@@ -33,18 +32,17 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/image_name_banana"
                     style="@style/TableRowTextViewName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewBanana" />
+                    android:id="@+id/textView1Name" />
 
                 <TextView
-                    android:text="DATE"
+                    android:inputType="date"
                     style="@style/TableRowTextViewDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewBananaDate" />
+                    android:id="@+id/textView1Date" />
             </LinearLayout>
 
         </TableRow>
@@ -53,13 +51,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/TableRow"
-            android:onClick="grapeBtnClickHandler">
+            android:onClick="BtnClickHandler2">
 
             <ImageView
                 android:layout_width="@dimen/image_thumb_square"
                 android:layout_height="@dimen/image_thumb_square"
-                app:srcCompat="@drawable/grape"
-                android:id="@+id/imageViewGrape" />
+                android:id="@+id/imageView2" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -67,18 +64,17 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/image_name_grape"
                     style="@style/TableRowTextViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewGrape" />
+                    android:id="@+id/textView2Name" />
 
                 <TextView
-                    android:text="DATE"
+                    android:inputType="date"
                     style="@style/TableRowTextViewDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewGrapeDate" />
+                    android:id="@+id/textView2Date" />
             </LinearLayout>
         </TableRow>
 
@@ -86,13 +82,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/TableRow"
-            android:onClick="grapefruitBtnClickHandler">
+            android:onClick="BtnClickHandler3">
 
             <ImageView
                 android:layout_width="@dimen/image_thumb_square"
                 android:layout_height="@dimen/image_thumb_square"
-                app:srcCompat="@drawable/grapefruit"
-                android:id="@+id/imageViewGrapefruit" />
+                android:id="@+id/imageView3" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -100,18 +95,17 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/image_name_grapefruit"
                     style="@style/TableRowTextViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewGrapefruit" />
+                    android:id="@+id/textView3Name" />
 
                 <TextView
-                    android:text="DATE"
+                    android:inputType="date"
                     style="@style/TableRowTextViewDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewGrapefruitDate" />
+                    android:id="@+id/textView3Date" />
             </LinearLayout>
         </TableRow>
 
@@ -119,13 +113,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/TableRow"
-            android:onClick="pineappleBtnClickHandler">
+            android:onClick="BtnClickHandler4">
 
             <ImageView
                 android:layout_width="@dimen/image_thumb_square"
                 android:layout_height="@dimen/image_thumb_square"
-                app:srcCompat="@drawable/pineapple"
-                android:id="@+id/imageViewPineapple" />
+                android:id="@+id/imageView4" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -133,18 +126,17 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="@string/image_name_pineapple"
                     style="@style/TableRowTextViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewPineapple" />
+                    android:id="@+id/textView4Name" />
 
                 <TextView
-                    android:text="DATE"
+                    android:inputType="date"
                     style="@style/TableRowTextViewDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewPineappleDate" />
+                    android:id="@+id/textView4Date" />
             </LinearLayout>
         </TableRow>
     </TableLayout>
