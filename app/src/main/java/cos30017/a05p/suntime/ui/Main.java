@@ -47,6 +47,7 @@ public class Main extends Activity
 		int month = cal.get(Calendar.MONTH);
 		int day = cal.get(Calendar.DAY_OF_MONTH);
 		dp.init(year,month,day,dateChangeHandler); // setup initial values and reg. handler
+        updateDate(year, month, day);
 
         //populate spinner
         readCityFile();
@@ -59,6 +60,12 @@ public class Main extends Activity
         Spinner spinnerCity = (Spinner) findViewById(R.id.spinnerCity);
         spinnerCity.setAdapter(spinnerArrayAdapter);
         spinnerCity.setOnItemSelectedListener(onItemSelectedListener);
+
+        //initial timezone and location. 34 = Melbourne
+        spinnerCity.setSelection(34);
+        updateLocation(34);
+
+        updateSunTime();
 	}
 
 	private void readCityFile() {
@@ -82,16 +89,12 @@ public class Main extends Activity
         this.year = year;
         this.monthOfYear = monthOfYear;
         this.dayOfMonth = dayOfMonth;
-
-        updateSunTime();
 	}
 
     //cbf hashmapping city names
     private void updateLocation(int cityIndex) {
         TimeZone tz = TimeZone.getTimeZone(cityList.get(cityIndex).getTimezone());
         geolocation = new GeoLocation(cityList.get(cityIndex).getCapitalCity(), cityList.get(cityIndex).getLatitude(), cityList.get(cityIndex).getLongitude(), tz);
-
-        updateSunTime();
     }
 
 
@@ -116,6 +119,7 @@ public class Main extends Activity
 		public void onDateChanged(DatePicker dp, int year, int monthOfYear, int dayOfMonth)
 		{
 			updateDate(year, monthOfYear, dayOfMonth);
+            updateSunTime();
 		}	
 	};
 
@@ -123,6 +127,7 @@ public class Main extends Activity
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             updateLocation(position);
+            updateSunTime();
         }
 
         @Override
