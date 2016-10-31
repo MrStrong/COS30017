@@ -99,3 +99,5 @@ Ferntree Gully,-37.88461,145.29539,Australia/Melbourne
 Adelaide Hills,-34.91118,138.70735,Australia/Adelaide
 Canning Vale,-32.05798,115.91814,Australia/Perth
 Glenmore Park,-33.79068,150.6693,Australia/Sydney
+Croydon North,-37.7737846,145.2770184,Australia/Melbourne
+Reservoir,-37.712337,144.9880216,Australia/Melbourne
