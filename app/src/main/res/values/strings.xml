@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">booklist</string>
+    <string name="app_name">Book List - Task 1</string>
+    <string name="book1_name">The Blood Mirror</string>
+    <string name="book2_name">The Four Legendary Kingdoms</string>
+    <string name="book3_name">The Girl on the Train</string>
+    <string name="book4_name">The Whistler</string>
+    <string name="book5_name">The Wrong Side of Goodbye</string>
+    <string name="book6_name">This Was a Man</string>
+    <string name="book7_name">A Distant Journey</string>
+    <string name="book8_name">Small Great Things</string>
+    <string name="book9_name">Badd Motherf*cker</string>
+    <string name="book10_name">The Subtle Art of Not Giving a F*ck</string>
+    <string name="book11_name">Try Hard</string>
+    <string name="book12_name">Miss Peregrine\'s Home for Peculiar Children</string>
+    <string name="book13_name">Pharaoh</string>
+    <string name="book14_name">His Erotic Obsession</string>
+    <string name="book15_name">No Man\'s Land</string>
+    <string name="book16_name">Kept</string>
 </resources>
