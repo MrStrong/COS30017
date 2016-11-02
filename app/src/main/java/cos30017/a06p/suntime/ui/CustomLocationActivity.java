@@ -1,4 +1,4 @@
-package cos30017.a05p.suntime.ui;
+package cos30017.a06p.suntime.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,7 +13,7 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 
-import cos30017.a05p.R;
+import cos30017.a06p.R;
 
 public class CustomLocationActivity extends AppCompatActivity {
 
@@ -78,6 +78,7 @@ public class CustomLocationActivity extends AppCompatActivity {
         String timezone;
 
         //simple validation, ensure all fields are not blank
+        //TODO sanity range check on lat longs
         EditText editTextLocationName = (EditText) findViewById(R.id.editTextLocationName);
         EditText editTextLat = (EditText) findViewById(R.id.editTextLatitude);
         EditText editTextLong = (EditText) findViewById(R.id.editTextLongitude);

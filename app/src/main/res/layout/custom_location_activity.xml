@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cos30017.a05p.suntime.ui.CustomLocationActivity">
+    tools:context="cos30017.a06p.suntime.ui.CustomLocationActivity">
 
     <ScrollView
         android:layout_width="match_parent"

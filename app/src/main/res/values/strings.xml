@@ -17,7 +17,9 @@
     <string name="form_label_long">Longitude</string>
     <string name="form_label_timezone">Timezone</string>
 
-    <string name="test">test</string>
+    <string name="user_custom_location_file">user_au_locations.txt</string>
+    <string name="file_delimiter">,</string>
+
 
 
 

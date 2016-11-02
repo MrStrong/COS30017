@@ -1,4 +1,4 @@
-package cos30017.a05p.suntime.ui;
+package cos30017.a06p.suntime.ui;
 
 import android.os.Parcel;
 import android.os.Parcelable;

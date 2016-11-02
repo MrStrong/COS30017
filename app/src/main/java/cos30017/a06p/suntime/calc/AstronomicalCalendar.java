@@ -1,4 +1,4 @@
-package cos30017.a05p.suntime.calc;
+package cos30017.a06p.suntime.calc;
 
 /*
  * This program is free software; you can redistribute it and/or modify it under the terms of the

@@ -1,18 +1,22 @@
-package cos30017.a05p.suntime.ui;
+package cos30017.a06p.suntime.ui;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.TimeZone;
 
-import cos30017.a05p.R;
-import cos30017.a05p.suntime.calc.AstronomicalCalendar;
-import cos30017.a05p.suntime.calc.GeoLocation;
+import cos30017.a06p.R;
+import cos30017.a06p.suntime.calc.AstronomicalCalendar;
+import cos30017.a06p.suntime.calc.GeoLocation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -79,20 +83,51 @@ public class MainActivity extends Activity
         spinnerCity.setAdapter(spinnerArrayAdapter);
     }
 
+    /**
+     *  read city text file in, check if user file exists, if so use that
+     *  otherwise use the template file included in the apk values/raw
+     */
 	private void readCityFile() {
-        InputStream inputStream = getResources().openRawResource(R.raw.au_locations);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
 
-        try {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                cityList.add(new City(line.split(",")));
+        //check user_au_locations.txt file exists in internal storage
+        File userLocationFile = new File(getFilesDir(), getString(R.string.user_custom_location_file));
+        if (!userLocationFile.exists()) {
+            Log.i("readCityFile", "user file does not exist, using default list");
+
+            try {
+                InputStream inputStream = getResources().openRawResource(R.raw.au_locations);
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    cityList.add(new City(line.split(",")));
+                }
+                Log.d("MAIN-readCityFile", "reading file complete");
+            } catch (Exception e){
+                Log.e("MAIN-readCityFile", "error reading default file");
+                e.printStackTrace();
             }
-            Log.d("MAIN-readCityFile", "reading file complete");
-        } catch (Exception e){
-            Log.e("MAIN-readCityFile", "error reading file");
-            e.printStackTrace();
+        } else {
+            //use user file from internal storage
+            try {
+                InputStream inputStream = openFileInput(userLocationFile.getName());
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    cityList.add(new City(line.split(",")));
+                }
+                Log.d("MAIN-readCityFile", "reading user file complete");
+
+            } catch (Exception e) {
+                Log.e("MAIN-readCityFile", "error reading user file");
+                e.printStackTrace();
+            }
         }
+
+
+
+
 	}
 
     /**
@@ -105,8 +140,31 @@ public class MainActivity extends Activity
         //update spinner
         populateCitySpinner();
 
-        //write to file
-        //TODO write to file
+
+        //update file
+        try {
+            FileOutputStream outputStream;
+            String fileDelimiter = getString(R.string.file_delimiter);
+            char fileNewline = '\n';
+            String line;
+
+            outputStream = openFileOutput(getString(R.string.user_custom_location_file), MODE_PRIVATE);
+
+            for (int i=0; i < cityList.size(); i++) {
+                line = cityList.get(i).getName() + fileDelimiter + cityList.get(i).getLatitude() + fileDelimiter +
+                        cityList.get(i).getLongitude() + fileDelimiter + cityList.get(i).getTimezone() + fileNewline;
+                outputStream.write(line.getBytes());
+
+            }
+
+            outputStream.close();
+
+            Log.i("FILE", "file saved");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 
 	private void updateDate(int year, int monthOfYear, int dayOfMonth)
