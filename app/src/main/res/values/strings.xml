@@ -19,5 +19,6 @@
     <string name="dialog_alert_imput_error_title">Input Error</string>
     <string name="dialog_alert_name_blank">Image name cannot be blank</string>
     <string name="dialog_alert_name_email">Obtainer not valid email address</string>
+    <string name="dialog_alert_name_date">Invalid date input</string>
 
 </resources>

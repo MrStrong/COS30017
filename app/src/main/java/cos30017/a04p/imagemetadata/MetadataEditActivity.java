@@ -90,6 +90,7 @@ public class MetadataEditActivity extends AppCompatActivity {
     }
 
     private void saveMetadata() throws Exception{
+        //validate image name is not blank
         if(EditViewImageName.getText().toString().equals("")) {
             showAlertDialog(getString(R.string.dialog_alert_imput_error_title), getString(R.string.dialog_alert_name_blank));
             throw new Exception();
@@ -100,6 +101,7 @@ public class MetadataEditActivity extends AppCompatActivity {
         imageMetadata.setSourceUrl(EditTextInputLocations.getText().toString());
         imageMetadata.setKeywords(EditTextKeywords.getText().toString());
 
+        //validate email address
         //https://developer.android.com/reference/android/util/Patterns.html
         if(!android.util.Patterns.EMAIL_ADDRESS.matcher( EditTextObtainer.getText().toString() ).matches()){
             showAlertDialog(getString(R.string.dialog_alert_imput_error_title), getString(R.string.dialog_alert_name_email));
@@ -113,7 +115,8 @@ public class MetadataEditActivity extends AppCompatActivity {
         try {
             imageMetadata.setObtainedDate(format.parse(EditViewObtainedDate.getText().toString()));
         } catch (Exception e) {
-            //TODO get angry at user for invalid input
+            showAlertDialog(getString(R.string.dialog_alert_imput_error_title), getString(R.string.dialog_alert_name_date));
+            throw new Exception();
         }
     }
 

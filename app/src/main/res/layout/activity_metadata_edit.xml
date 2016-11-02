@@ -115,7 +115,6 @@
                     android:text="@string/label_form_author"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
                     android:id="@+id/textLabelObtainer"
                     android:layout_column="1"/>
 
