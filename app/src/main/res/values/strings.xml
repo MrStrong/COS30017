@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Suntime</string>
+    <string name="custom_location_activity_name">Add Custom Location</string>
+
+    <string name="dialog_invalid_input">Invalid Input</string>
+    <string name="dialog_invalid_input_name">Location name cannot be blank</string>
+    <string name="dialog_invalid_input_lat">Latitude cannot be blank</string>
+    <string name="dialog_invalid_input_long">Longitude cannot be blank</string>
+
+    <string name="form_label_location">Selected Location</string>
+    <string name="form_button_add_location">Add New Location</string>
+    <string name="form_button_save">Save Location</string>
+
+    <string name="form_label_location_name">Location Name</string>
+    <string name="form_label_lat">Latitude</string>
+    <string name="form_label_long">Longitude</string>
+    <string name="form_label_timezone">Timezone</string>
+
+    <string name="test">test</string>
+
+
+
 </resources>
