@@ -4,10 +4,11 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cos30017.a06p.booklist.MainActivity">
+    tools:context="cos30017.a08c.booklist.MainActivity">
 
-    <ListView
-        android:id="@+id/bookList"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RecyclerView"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>
