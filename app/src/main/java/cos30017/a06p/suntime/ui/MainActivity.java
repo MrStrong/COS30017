@@ -18,6 +18,8 @@ import cos30017.a06p.R;
 import cos30017.a06p.suntime.calc.AstronomicalCalendar;
 import cos30017.a06p.suntime.calc.GeoLocation;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -125,9 +127,6 @@ public class MainActivity extends Activity
             }
         }
 
-
-
-
 	}
 
     /**
@@ -182,19 +181,36 @@ public class MainActivity extends Activity
 
 
     private void updateSunTime() {
-        AstronomicalCalendar ac = new AstronomicalCalendar(geolocation);
-        ac.getCalendar().set(year, monthOfYear, dayOfMonth);
-        Date srise = ac.getSunrise();
-        Date sset = ac.getSunset();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-
         TextView sunriseTV = (TextView) findViewById(R.id.sunriseTimeTV);
         TextView sunsetTV = (TextView) findViewById(R.id.sunsetTimeTV);
-        Log.d("SUNRISE Unformatted", srise+"");
 
-        sunriseTV.setText(sdf.format(srise));
-        sunsetTV.setText(sdf.format(sset));
+        try {
+           AstronomicalCalendar ac = new AstronomicalCalendar(geolocation);
+           ac.getCalendar().set(year, monthOfYear, dayOfMonth);
+           Date srise = ac.getSunrise();
+           Date sset = ac.getSunset();
+
+           SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+
+           Log.d("SUNRISE Unformatted", srise + "");
+
+           sunriseTV.setText(sdf.format(srise));
+           sunsetTV.setText(sdf.format(sset));
+
+        } catch (NullPointerException e) {
+            Log.i("SUNRISE", "Location too close to pole, cannot calculate suntime");
+
+            sunriseTV.setText(getString(R.string.text_suntime_pole));
+            sunsetTV.setText(getString(R.string.text_suntime_pole));
+
+            showAlertDialog(getString(R.string.dialog_invalid_input) , getString(R.string.dialog_warn_location_poles));
+
+        } catch (Exception e) {
+           Log.e("SUNRISE", "Unknown error calculating suntime");
+           e.printStackTrace();
+           showAlertDialog(getString(R.string.dialog_error), getString(R.string.dialog_error_calculation));
+        }
+
     }
 
 	OnDateChangedListener dateChangeHandler = new OnDateChangedListener()
@@ -239,4 +255,19 @@ public class MainActivity extends Activity
             updateCityFile(city);
         }
     }
+
+
+    private void showAlertDialog(String title, String message) {
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
+
 }

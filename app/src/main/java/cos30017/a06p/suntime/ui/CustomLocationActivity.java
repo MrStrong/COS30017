@@ -73,12 +73,11 @@ public class CustomLocationActivity extends AppCompatActivity {
 
     public City saveCity() throws Exception{
         String cityName;
-        String latitude;
-        String longitude;
+        double latitude;
+        double longitude;
         String timezone;
 
-        //simple validation, ensure all fields are not blank
-        //TODO sanity range check on lat longs
+        //simple validation
         EditText editTextLocationName = (EditText) findViewById(R.id.editTextLocationName);
         EditText editTextLat = (EditText) findViewById(R.id.editTextLatitude);
         EditText editTextLong = (EditText) findViewById(R.id.editTextLongitude);
@@ -95,14 +94,28 @@ public class CustomLocationActivity extends AppCompatActivity {
             showAlertDialog(getString(R.string.dialog_invalid_input), getString(R.string.dialog_invalid_input_lat));
             throw new Exception();
         } else {
-            latitude = editTextLat.getText().toString();
+            //check valid range
+            double tempLat = Double.parseDouble(editTextLat.getText().toString());
+            if (tempLat < -90 || tempLat > 90) {
+                showAlertDialog(getString(R.string.dialog_invalid_input), getString(R.string.dialog_invalid_input_lat_range));
+                throw new Exception();
+            } else {
+                latitude = tempLat;
+            }
         }
 
         if (editTextLong.getText().toString().equals("")) {
-            showAlertDialog(getString(R.string.dialog_invalid_input), getString(R.string.dialog_invalid_input_long));
+            showAlertDialog(getString(R.string.dialog_invalid_input), getString(R.string.dialog_invalid_input_long_range));
             throw new Exception();
         } else {
-            longitude = editTextLong.getText().toString();
+            //check valid range
+            double tempLong = Double.parseDouble(editTextLat.getText().toString());
+            if (tempLong < -180 || tempLong > 180) {
+                showAlertDialog(getString(R.string.dialog_invalid_input), getString(R.string.dialog_invalid_input_lat));
+                throw new Exception();
+            } else {
+                longitude = tempLong;
+            }
         }
 
         timezone = spinnerTimezone.getSelectedItem().toString();

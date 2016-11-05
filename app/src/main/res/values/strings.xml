@@ -7,6 +7,11 @@
     <string name="dialog_invalid_input_name">Location name cannot be blank</string>
     <string name="dialog_invalid_input_lat">Latitude cannot be blank</string>
     <string name="dialog_invalid_input_long">Longitude cannot be blank</string>
+    <string name="dialog_invalid_input_lat_range">Latitude must be within -90 and 90 degrees</string>
+    <string name="dialog_invalid_input_long_range">Longitude must be within -180 and 180 degrees</string>
+    <string name="dialog_error">Error</string>
+    <string name="dialog_error_calculation">Error calculating sunrise/sunset times</string>
+    <string name="dialog_warn_location_poles">Cannot calculate sunrise/sunset times, location too close to pole.</string>
 
     <string name="form_label_location">Selected Location</string>
     <string name="form_button_add_location">Add New Location</string>
@@ -16,6 +21,8 @@
     <string name="form_label_lat">Latitude</string>
     <string name="form_label_long">Longitude</string>
     <string name="form_label_timezone">Timezone</string>
+
+    <string name="text_suntime_pole">N/A</string>
 
     <string name="user_custom_location_file">user_au_locations.txt</string>
     <string name="file_delimiter">,</string>
