@@ -33,7 +33,7 @@
             android:stepSize="1"
             android:id="@+id/row_ratingbar"
             android:rating="3"
-            android:isIndicator="false" />
+            android:isIndicator="true" />
     </LinearLayout>
 
 </LinearLayout>

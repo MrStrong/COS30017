@@ -2,15 +2,12 @@ package cos30017.a08c.booklist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -18,7 +15,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Book> bookArrayList = new ArrayList<>();
+    private ArrayList<Book> bookArrayList = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
 
     @Override
@@ -36,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
         //listView.setAdapter(new RowIconAdapter());
 
         //use RecyclerView
+        mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // specify an adapter and input data
+        mAdapter = new MyAdapter(bookArrayList);
+        mRecyclerView.setAdapter(mAdapter);
+
     }
 
     /**
@@ -71,32 +85,45 @@ public class MainActivity extends AppCompatActivity {
 
 //android doc method
     class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-        private String[] mDataset;
+        private ArrayList<Book> mBooks;
 
         // Provide a reference to the views for each data item
         // Complex data items may need more than one view per item, and
         // you provide access to all the views for a data item in a view holder
         public class ViewHolder extends RecyclerView.ViewHolder {
-            // each data item is just a string in this case
-            public TextView mTextView;
-            public ViewHolder(TextView v) {
+            private ImageView imageViewRowIcon;
+            private TextView textViewRowLabel;
+            private RatingBar ratingBarRowRating;
+            private Book book;
+
+
+            public ViewHolder(View v) {
                 super(v);
-                mTextView = v;
+
+                imageViewRowIcon = (ImageView) v.findViewById(R.id.row_icon);
+                textViewRowLabel = (TextView) v.findViewById(R.id.row_label);
+                ratingBarRowRating = (RatingBar) v.findViewById(R.id.row_ratingbar);
+            }
+
+            public void bindBook(Book book) {
+                this.book = book;
+
+                imageViewRowIcon.setImageResource(book.getDrawableID());
+                textViewRowLabel.setText(book.getName());
+                ratingBarRowRating.setRating(book.getRating());
             }
         }
 
         // Provide a suitable constructor (depends on the kind of dataset)
-        public MyAdapter(String[] myDataset) {
-            mDataset = myDataset;
+        public MyAdapter(ArrayList<Book> mBooks) {
+            this.mBooks = mBooks;
         }
 
         // Create new views (invoked by the layout manager)
         @Override
-        public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                       int viewType) {
+        public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // create a new view
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.listrow, parent, false);
-            // set the view's size, margins, paddings and layout parameters
 
             ViewHolder vh = new ViewHolder(v);
             return vh;
@@ -107,19 +134,17 @@ public class MainActivity extends AppCompatActivity {
         public void onBindViewHolder(ViewHolder holder, int position) {
             // - get element from your dataset at this position
             // - replace the contents of the view with that element
-            holder.mTextView.setText(mDataset[position]);
+            holder.bindBook(mBooks.get(position));
 
         }
 
         // Return the size of your dataset (invoked by the layout manager)
         @Override
         public int getItemCount() {
-            return mDataset.length;
+            return mBooks.size();
         }
     }
-
-
-
+    
 
 
 //lecture recycle method
