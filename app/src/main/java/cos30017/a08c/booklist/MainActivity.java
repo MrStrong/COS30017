@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             private ImageView imageViewRowIcon;
             private TextView textViewRowLabel;
             private RatingBar ratingBarRowRating;
+            private ProgressBar progressBarRowIcon;
             private Book book;
 
 
@@ -106,49 +108,49 @@ public class MainActivity extends AppCompatActivity {
                 imageViewRowIcon = (ImageView) v.findViewById(R.id.row_icon);
                 textViewRowLabel = (TextView) v.findViewById(R.id.row_label);
                 ratingBarRowRating = (RatingBar) v.findViewById(R.id.row_ratingbar);
+                progressBarRowIcon = (ProgressBar) v.findViewById(R.id.row_icon_progress);
             }
 
             public void bindBook(Book book) {
                 this.book = book;
 
-                //imageViewRowIcon.setImageResource(book.getDrawableID());
                 textViewRowLabel.setText(book.getName());
                 ratingBarRowRating.setRating(book.getRating());
-                new imageLoader(book.getDrawableID()).execute(this);
+                new imageLoader(this, book.getDrawableID()).execute(); //loading handled within imageLoader
             }
         }
 
         // Use an AsyncTask to load the slow images in a background thread
-        //TODO change from ViewHolder to ImageView to make more generic as it's only being used for the icon
-        class imageLoader extends AsyncTask<ViewHolder, Void, Bitmap> {
+        // pass ViewHolder in through constructor rather than through AsycTask method to allow
+        // onPreExecute() to set loading spinner
+        class imageLoader extends AsyncTask<Void, Void, Bitmap> {
             ViewHolder v;
             int drawableID;
 
-            public imageLoader(int drawableID) {
+            public imageLoader(ViewHolder v, int drawableID) {
+                this.v = v;
                 this.drawableID = drawableID;
             }
 
             @Override
-            protected Bitmap doInBackground(ViewHolder... params) {
-                v = params[0];
-
+            protected Bitmap doInBackground(Void... param) {
                 return ((BitmapDrawable)getDrawable(drawableID)).getBitmap();
             }
 
             @Override
+            protected  void onPreExecute() {
+                //show loading spinner upon starting
+                v.imageViewRowIcon.setImageDrawable(null); //clear last image to avoid user confusion
+                v.progressBarRowIcon.setVisibility(View.VISIBLE);
+            }
+
+            @Override
             protected void onPostExecute(Bitmap result) {
-                //super.onPostExecute(result);
-//                if (v.position == position) {
-//                    // If this item hasn't been recycled already, hide the
-//                    // progress and set and show the image
-//                    v.progress.setVisibility(View.GONE);
-//                    v.icon.setVisibility(View.VISIBLE);
-//                    v.icon.setImageBitmap(result);
-//
-//                }
+                //kill loading spinner once complete
+                v.progressBarRowIcon.setVisibility(View.GONE);
                 v.imageViewRowIcon.setImageBitmap(result);
             }
-        }//.execute(holder);
+        }
 
 
 
