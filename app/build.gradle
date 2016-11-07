@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
     defaultConfig {
-        applicationId "cos30017.a06p.booklist"
+        applicationId "cos30017.a08c.booklist"
         minSdkVersion 23
         targetSdkVersion 24
         versionCode 1

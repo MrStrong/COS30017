@@ -1,5 +1,8 @@
 package cos30017.a08c.booklist;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -108,11 +111,46 @@ public class MainActivity extends AppCompatActivity {
             public void bindBook(Book book) {
                 this.book = book;
 
-                imageViewRowIcon.setImageResource(book.getDrawableID());
+                //imageViewRowIcon.setImageResource(book.getDrawableID());
                 textViewRowLabel.setText(book.getName());
                 ratingBarRowRating.setRating(book.getRating());
+                new imageLoader(book.getDrawableID()).execute(this);
             }
         }
+
+        // Use an AsyncTask to load the slow images in a background thread
+        //TODO change from ViewHolder to ImageView to make more generic as it's only being used for the icon
+        class imageLoader extends AsyncTask<ViewHolder, Void, Bitmap> {
+            ViewHolder v;
+            int drawableID;
+
+            public imageLoader(int drawableID) {
+                this.drawableID = drawableID;
+            }
+
+            @Override
+            protected Bitmap doInBackground(ViewHolder... params) {
+                v = params[0];
+
+                return ((BitmapDrawable)getDrawable(drawableID)).getBitmap();
+            }
+
+            @Override
+            protected void onPostExecute(Bitmap result) {
+                //super.onPostExecute(result);
+//                if (v.position == position) {
+//                    // If this item hasn't been recycled already, hide the
+//                    // progress and set and show the image
+//                    v.progress.setVisibility(View.GONE);
+//                    v.icon.setVisibility(View.VISIBLE);
+//                    v.icon.setImageBitmap(result);
+//
+//                }
+                v.imageViewRowIcon.setImageBitmap(result);
+            }
+        }//.execute(holder);
+
+
 
         // Provide a suitable constructor (depends on the kind of dataset)
         public MyAdapter(ArrayList<Book> mBooks) {
