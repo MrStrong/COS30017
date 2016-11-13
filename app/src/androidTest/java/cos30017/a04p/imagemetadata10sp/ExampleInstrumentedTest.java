@@ -1,4 +1,4 @@
-package cos30017.a04p.imagemetadata;
+package cos30017.a04p.imagemetadata18sp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

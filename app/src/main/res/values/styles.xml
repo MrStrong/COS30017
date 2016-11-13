@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="TableRowTextViewName">
@@ -20,4 +22,14 @@
         <!--<item name="android:background">@color/colorTableBackground</item>-->
     </style>
 
+    <style name="activity_metadata_edit_form" parent="AppTheme">
+
+        <!--<item name="android:textViewStyle">@style/FormLabel</item>-->
+        <item name="android:textSize">18sp</item>
+
+    </style>
+
+    <style name="FormLabel">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

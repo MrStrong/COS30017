@@ -1,4 +1,4 @@
-package cos30017.a04p.imagemetadata;
+package cos30017.a04p.imagemetadata18sp;
 
 import android.os.Parcel;
 import android.os.Parcelable;
